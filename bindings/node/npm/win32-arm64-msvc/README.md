@@ -1,3 +1,3 @@
-# `node-eth-kzg-win32-arm64-msvc`
+# `node-sil-kzg-win32-arm64-msvc`
 
-This is the **aarch64-pc-windows-msvc** binary for `node-eth-kzg`
+This is the **aarch64-pc-windows-msvc** binary for `node-sil-kzg`

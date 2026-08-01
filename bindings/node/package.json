@@ -1,5 +1,5 @@
 {
-  "name": "@crate-crypto/node-eth-kzg",
+  "name": "@sila-chain/node-sil-kzg",
   "version": "0.8.0",
   "publishConfig": {
     "access": "public"
@@ -16,7 +16,7 @@
     "version": "napi version"
   },
   "devDependencies": {
-    "@napi-rs/cli": "^2",
+    "@napi-rs/cli": "2.18.3",
     "@types/jest": "^29.1.2",
     "@types/node": "^20.12.12",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
@@ -35,7 +35,7 @@
     "typescript": "^5.2.2"
   },
   "napi": {
-    "name": "node-eth-kzg",
+    "name": "node-sil-kzg",
     "triples": {
       "additional": [
         "aarch64-apple-darwin",
@@ -53,12 +53,12 @@
     "node": ">= 10"
   },
   "license": "MIT",
-  "homepage": "https://github.com/crate-crypto/rust-eth-kzg#readme",
+  "homepage": "https://github.com/sila-chain/rust-sil-kzg#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crate-crypto/rust-eth-kzg.git"
+    "url": "git+https://github.com/sila-chain/rust-sil-kzg.git"
   },
   "bugs": {
-    "url": "https://github.com/crate-crypto/rust-eth-kzg/issues"
+    "url": "https://github.com/sila-chain/rust-sil-kzg/issues"
   }
 }

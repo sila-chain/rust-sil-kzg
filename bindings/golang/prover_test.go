@@ -1,4 +1,4 @@
-package eth_kzg
+package sil_kzg
 
 import (
 	"testing"

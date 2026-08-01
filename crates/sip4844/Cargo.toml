@@ -1,0 +1,45 @@
+[package]
+name = "sip4844"
+description = "This crate provides an implementation of the cryptography needed for SIP-4844"
+version = { workspace = true }
+authors = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
+rust-version = { workspace = true }
+repository = { workspace = true }
+
+[lints]
+workspace = true
+
+[dependencies]
+bls12_381 = { workspace = true }
+trusted_setup = { workspace = true }
+polynomial = { workspace = true }
+serialization = { workspace = true }
+maybe_rayon = { workspace = true }
+kzg_single_open = { workspace = true }
+hex = { workspace = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10.8"
+tracing = { version = "0.1.41", default-features = false, features = [
+    "attributes",
+], optional = true }
+itertools = { version = "0.14.0", default-features = false, features = [
+    "use_alloc",
+] }
+
+[features]
+singlethreaded = []
+multithreaded = ["maybe_rayon/multithreaded"]
+tracing = ["dep:tracing"]
+
+[dev-dependencies]
+criterion = "0.5.1"
+rand = { workspace = true }
+hex = { workspace = true }
+# Serde-yaml has been deprecated, however since we only
+# use it for tests, we will not update it.
+serde_yaml = "0.9.34"
+tracing-subscriber = { version = "0.3.19", features = ["std", "env-filter"] }
+tracing-forest = { version = "0.1.6", features = ["ansi", "smallvec"] }
