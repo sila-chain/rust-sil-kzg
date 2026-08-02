@@ -4,6 +4,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sila-chain/rust-sil-kzg.git"
+  },
   "os": [
     "win32"
   ],
