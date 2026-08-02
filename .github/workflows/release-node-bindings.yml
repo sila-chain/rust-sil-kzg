@@ -28,7 +28,7 @@ on:
         default: none
         description: Indicates whether we want to make a release and if which one
         options:
-          - candidate # Publish version 0.8.0 under the candidate dist-tag
+          - release # Release an official version to npm
           - none # Build and test only
 
 jobs:
@@ -221,12 +221,11 @@ jobs:
       - name: Move artifacts
         run: yarn artifacts
       - name: Publish
-        if: ${{ inputs.release-type == 'candidate' && github.event_name == 'workflow_dispatch' }}
+        if: ${{ inputs.release-type == 'release' && github.event_name == 'workflow_dispatch' }}
         run: |
           npm config set provenance true
-          export NPM_CONFIG_TAG=candidate
           yarn prepareAndPublishAddons
-          npm publish --access public --tag candidate
+          npm publish --access public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_RELEASE_TOKEN }}
