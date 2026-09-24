@@ -8,7 +8,7 @@ permissions:
 on:
   push:
     branches:
-      - master
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -39,7 +39,7 @@ jobs:
                 uses: benc-uk/workflow-dispatch@v1
                 with:
                     workflow: release-rust-crates.yml
-                    ref: master
+                    ref: main
                     inputs: '{ "ref": "${{ needs.release-please.outputs.tag-name }}", "release-type": "release" }'
                     token: ${{ secrets.RELEASE_TOKEN }}
 
@@ -53,7 +53,7 @@ jobs:
                 uses: benc-uk/workflow-dispatch@v1
                 with:
                     workflow: release-node-bindings.yml
-                    ref: master
+                    ref: main
                     inputs: '{ "ref": "${{ needs.release-please.outputs.tag-name }}", "release-type": "release" }'
                     token: ${{ secrets.RELEASE_TOKEN }}
 
@@ -67,7 +67,7 @@ jobs:
                 uses: benc-uk/workflow-dispatch@v1
                 with:
                     workflow: release-java-bindings.yml
-                    ref: master
+                    ref: main
                     inputs: '{ "ref": "${{ needs.release-please.outputs.tag-name }}", "release-type": "release" }'
                     token: ${{ secrets.RELEASE_TOKEN }}
 
@@ -81,7 +81,7 @@ jobs:
                 uses: benc-uk/workflow-dispatch@v1
                 with:
                     workflow: release-csharp-bindings.yml
-                    ref: master
+                    ref: main
                     inputs: '{ "ref": "${{ needs.release-please.outputs.tag-name }}", "release-type": "release" }'
                     token: ${{ secrets.RELEASE_TOKEN }}
 
@@ -95,6 +95,6 @@ jobs:
                 uses: benc-uk/workflow-dispatch@v1
                 with:
                     workflow: release-nim-bindings.yml
-                    ref: master
+                    ref: main
                     inputs: '{ "ref": "${{ needs.release-please.outputs.tag-name }}" }'
                     token: ${{ secrets.RELEASE_TOKEN }}
